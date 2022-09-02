@@ -1,6 +1,6 @@
 import java.util.*;
 public class Task1 {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         final String str = "cba bcc aba";
         System.out.println("String before replacing = \"" + str +"\"");
         final String str_2 = sort_by_a(str);

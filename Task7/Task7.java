@@ -1,7 +1,7 @@
 package Task7;
 
 public class Task7 {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Product product;
         double summa =0;
         for (int i =0 ; i <bill.length ; i++){

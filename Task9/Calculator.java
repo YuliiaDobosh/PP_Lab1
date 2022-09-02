@@ -9,73 +9,73 @@ public class Calculator {
         return number;
     }
 
-    public void setNumber(double number) {
+    public void setNumber(final double number) {
         this.number = number;
     }
 
-    public Calculator(double number) {
+    public Calculator(final double number) {
         this.number = number;
     }
 
-    public double add(double number2) {
+    public double add(final double number2) {
         if (number2 % 1 == 0) {
             return number + number2;
         }
         final int numberI = (int) number;
         final double numberD = number - numberI;
-        CustomDouble cd = new CustomDouble(numberI, numberD);
+        final CustomDouble cd = new CustomDouble(numberI, numberD);
 
         final int numberInt = (int) number2;
         final double numberDouble = number2 - numberInt;
-        CustomDouble c = new CustomDouble(numberInt, numberDouble);
+        final CustomDouble c = new CustomDouble(numberInt, numberDouble);
 
-        CustomDouble sum = cd.sum(c);
-        double d = sum.toDouble();
+        final CustomDouble sum = cd.sum(c);
+        final double d = sum.toDouble();
         return d;
     }
 
-    public double ded(double number2) {
+    public double ded(final double number2) {
         if (number2 % 1 == 0) {
             return number - number2;
         }
         final int numberI = (int) number;
         final double numberD = number - numberI;
-        CustomDouble cd = new CustomDouble(numberI, numberD);
+        final CustomDouble cd = new CustomDouble(numberI, numberD);
 
         final int numberInt = (int) number2;
         final double numberDouble = number2 - numberInt;
-        CustomDouble c = new CustomDouble(numberInt, numberDouble);
+        final CustomDouble c = new CustomDouble(numberInt, numberDouble);
 
-        CustomDouble ded = cd.ded(c);
-        double d = ded.toDouble();
+        final CustomDouble ded = cd.ded(c);
+        final double d = ded.toDouble();
         return d;
     }
 
-    public double mult(double number2) {
+    public double mult(final double number2) {
         if (number2 % 1 == 0) {
             return number * number2;
         }
         final int numberI = (int) number;
         final double numberD = number - numberI;
-        CustomDouble cd = new CustomDouble(numberI, numberD);
+        final CustomDouble cd = new CustomDouble(numberI, numberD);
 
         final int numberInt = (int) number2;
         final double numberDouble = number2 - numberInt;
-        CustomDouble c = new CustomDouble(numberInt, numberDouble);
+        final CustomDouble c = new CustomDouble(numberInt, numberDouble);
 
         return cd.toDouble() * c.toDouble();
     }
-    public double div(double number2) {
+    public double div(final double number2) {
         if (number2 % 1 == 0) {
             return number / number2;
         }
         final int numberI = (int) number;
         final double numberD = number - numberI;
-        CustomDouble cd = new CustomDouble(numberI, numberD);
+        final CustomDouble cd = new CustomDouble(numberI, numberD);
 
         final int numberInt = (int) number2;
         final double numberDouble = number2 - numberInt;
-        CustomDouble c = new CustomDouble(numberInt, numberDouble);
+        final CustomDouble c = new CustomDouble(numberInt, numberDouble);
 
         return cd.toDouble() / c.toDouble();
     }

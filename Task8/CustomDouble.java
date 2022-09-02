@@ -7,10 +7,10 @@ public class CustomDouble {
     private double d;
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CustomDouble that = (CustomDouble) o;
+        final CustomDouble that = (CustomDouble) o;
         return i == that.i && Double.compare(that.d, d) == 0;
     }
 
@@ -19,13 +19,13 @@ public class CustomDouble {
         return Objects.hash(i, d);
     }
 
-    public CustomDouble(int i, double d) {
+    public CustomDouble(final int i,final double d) {
         this.i = i;
         this.d = d;
     }
 
-    public CustomDouble sum(CustomDouble c ) {
-        CustomDouble y = new CustomDouble(0,0);
+    public CustomDouble sum(final CustomDouble c ) {
+        final CustomDouble y = new CustomDouble(0,0);
         y.i = i +c.i ;
         y.d = d +c.d;
         while (y.d>1){
@@ -34,8 +34,8 @@ public class CustomDouble {
         }
         return y;
     }
-    public CustomDouble ded(CustomDouble c ) {
-        CustomDouble y = new CustomDouble(0,0);
+    public CustomDouble ded(final CustomDouble c ) {
+        final CustomDouble y = new CustomDouble(0,0);
         y.i = i -c.i ;
         y.d = d -c.d;
         while (y.d<0.1){
@@ -56,11 +56,11 @@ public class CustomDouble {
         return d;
     }
 
-    public void setI(int i) {
+    public void setI(final int i) {
         this.i = i;
     }
 
-    public void setD(double d) {
+    public void setD(final double d) {
         this.d = d;
     }
 
