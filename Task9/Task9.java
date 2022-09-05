@@ -4,11 +4,9 @@ import Task8.CustomDouble;
 
 public class Task9 {
     public static void main(final String[] args) {
-    final Calculator calc = new Calculator(8.6);
-    final Calculator calc2 = new Calculator(4.);
-        System.out.println(calc.add(calc2.getNumber()));
-        System.out.println(calc.ded(calc2.getNumber()));
-        System.out.println(calc.mult(calc2.getNumber()));
-        System.out.println(calc.div(calc2.getNumber()));
+        final CustomDouble number1 = new CustomDouble(3, 6);
+        final CustomDouble number2 = new CustomDouble(2, 4);
+        System.out.println(Calculator.mult(number1, number2));
+        System.out.println(Calculator.div(number1, number2));
     }
 }

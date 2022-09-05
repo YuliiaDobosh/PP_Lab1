@@ -3,7 +3,7 @@ package Task8;
 import java.util.Objects;
 
 public class CustomDouble {
-    private int i ;
+    private int i;
     private double d;
 
     @Override
@@ -19,33 +19,44 @@ public class CustomDouble {
         return Objects.hash(i, d);
     }
 
-    public CustomDouble(final int i,final double d) {
+    public CustomDouble(final int i, final double d) {
         this.i = i;
-        this.d = d;
+        if (d < 1) {
+            this.d = d;
+        } else {
+            this.d = d - (int) d;
+            System.out.println("Error:Can`t initialized second part properly");
+        }
     }
 
-    public CustomDouble sum(final CustomDouble c ) {
-        final CustomDouble y = new CustomDouble(0,0);
-        y.i = i +c.i ;
-        y.d = d +c.d;
-        while (y.d>1){
-            y.i += 1;
-            y.d -= 1;
+    public CustomDouble sum(final CustomDouble c) {
+        final CustomDouble y = new CustomDouble(0, 0);
+        final int Integer;
+        y.i = i + c.i;
+        y.d = d + c.d;
+        if (y.d > 1) {
+            Integer = (int) y.d;
+            y.d = y.d - Integer;
+            y.i = y.i + Integer;
         }
         return y;
     }
-    public CustomDouble ded(final CustomDouble c ) {
-        final CustomDouble y = new CustomDouble(0,0);
-        y.i = i -c.i ;
-        y.d = d -c.d;
-        while (y.d<0.1){
-            y.i -= 1;
-            y.d += 1;
+
+    public CustomDouble ded(final CustomDouble c) {
+        final CustomDouble y = new CustomDouble(0, 0);
+        final int Integer;
+        y.i = i - c.i;
+        y.d = d - c.d;
+        if (y.d < 0.1) {
+            Integer = (int) y.d;
+            y.d = y.d + Integer;
+            y.i = y.i - Integer;
         }
         return y;
     }
-    public double toDouble (){
-        return i+d ;
+
+    public double toDouble() {
+        return i + d;
     }
 
     public int getI() {
