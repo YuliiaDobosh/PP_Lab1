@@ -29,28 +29,28 @@ public class CustomDouble {
         }
     }
 
-    public CustomDouble sum(final CustomDouble c) {
+    public CustomDouble sum(final CustomDouble number2) {
         final CustomDouble y = new CustomDouble(0, 0);
-        final int Integer;
-        y.i = i + c.i;
-        y.d = d + c.d;
+        final int whole;
+        y.i = i + number2.i;
+        y.d = d + number2.d;
         if (y.d > 1) {
-            Integer = (int) y.d;
-            y.d = y.d - Integer;
-            y.i = y.i + Integer;
+            whole = (int) y.d;
+            y.d = y.d - whole;
+            y.i = y.i + whole;
         }
         return y;
     }
 
-    public CustomDouble ded(final CustomDouble c) {
+    public CustomDouble ded(final CustomDouble number2) {
         final CustomDouble y = new CustomDouble(0, 0);
-        final int Integer;
-        y.i = i - c.i;
-        y.d = d - c.d;
+        final int whole;
+        y.i = i - number2.i;
+        y.d = d - number2.d;
         if (y.d < 0.1) {
-            Integer = (int) y.d;
-            y.d = y.d + Integer;
-            y.i = y.i - Integer;
+            whole = (int) y.d;
+            y.d = y.d + whole;
+            y.i = y.i - whole;
         }
         return y;
     }
