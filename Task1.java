@@ -1,26 +1,31 @@
 import java.util.*;
+
 public class Task1 {
     public static void main(final String[] args) {
         final String str = "cba bcc aba";
-        System.out.println("String before replacing = \"" + str +"\"");
-        final String str_2 = sort_by_a(str);
-        System.out.println("String after replacing = \"" + str_2 +"\"");
+        System.out.println("String before replacing = \"" + str + "\"");
+        final char symbol = 'a';
+        final String str2 = sortBySymbol(str, symbol);
+        System.out.println("String after replacing = \"" + str2 + "\"");
 
     }
-    public static String sort_by_a (final String str){
+
+    public static String sortBySymbol(final String str, final char symbol) {
+
         final String[] result = str.split(" ");
-        final Comparator<String> comp = Comparator.comparing(letter -> count_a(letter));
+        final Comparator<String> comp = Comparator.comparing(letter -> countBySymbol(letter, symbol));
         Arrays.sort(result, comp.reversed());
         return Arrays.toString(result);
     }
-    public static int count_a (final String letter){
-        final char ch = 'a';
-        int b = 0;
-        for(int i = 0; i < letter.length(); i++){
-            if (letter.charAt(i) == ch)
-            {
-                b++;
+
+    public static int countBySymbol(final String letter, final char symbol) {
+        int count = 0;
+        final char[] charArray = letter.toCharArray();
+        for (final char ch : charArray) {
+            if (ch == symbol) {
+                count++;
             }
-        }return b;
+        }
+        return count;
     }
 }

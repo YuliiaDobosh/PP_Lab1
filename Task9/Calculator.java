@@ -69,6 +69,11 @@ public class Calculator {
         if (number2 % 1 == 0) {
             return number / number2;
         }
+        if(number == 0.0 || number2 == 0.0)
+        {
+            System.out.println("Error");
+            return -1;
+        }
         final int numberI = (int) number;
         final double numberD = number - numberI;
         final CustomDouble cd = new CustomDouble(numberI, numberD);
